@@ -3,6 +3,7 @@ package com.yrj;
 import com.yrj.filter.SecondFilter;
 import com.yrj.listener.SecondListener;
 import com.yrj.servlet.SecondServlet;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 @ServletComponentScan
+@MapperScan("com.yrj.mapper")
 public class SpringBootStudyApplication {
 
     public static void main(String[] args) {
