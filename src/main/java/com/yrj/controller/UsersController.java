@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/users")
-public class Userscontroller {
+@RequestMapping("/user")
+public class UsersController {
 
     @Autowired
     private UserService userService;
@@ -19,9 +19,14 @@ public class Userscontroller {
         return page;
     }
 
+    @RequestMapping("getUser")
+    public Object getUser(Integer id){
+        return userService.getUser(id);
+    }
+
     @RequestMapping("/addUser")
-    public String addUser(User user){
-        this.userService.addUser(user);
+    public String addUser(String name,Integer age){
+        this.userService.addUser(name,age);
         return "ok";
     }
 }

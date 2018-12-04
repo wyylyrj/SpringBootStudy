@@ -15,7 +15,14 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    public void addUser(User user){
-        this.userMapper.insertUser(user);
+    public void addUser(String name,Integer age){
+
+        this.userMapper.insertUser(name,age);
+    }
+
+    @Override
+    public Object getUser(Integer id) {
+        User user = this.userMapper.getUserById(id);
+        return user;
     }
 }
