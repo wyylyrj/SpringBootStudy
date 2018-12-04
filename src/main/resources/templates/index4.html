@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1" align="center">
+    <tr>
+        <th>KEY</th>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+    </tr>
+    <tr th:each="map : ${map}">
+        <td th:text="${map}"></td>
+        <td th:text="${map}"></td>
+        <td th:text="${map}"></td>
+        <td th:text="${map}"></td>
+    </tr>
+</table>
+<hr/>
+<table border="1" align="center">
+    <tr>
+        <th>KEY</th>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>AGE</th>
+    </tr>
+    <tr th:each="maps : ${map}">
+        <td th:each="u : ${maps}" th:text="${u.key}"></td>
+        <td th:each="u : ${maps}" th:text="${u.value.userId}"></td>
+        <td th:each="u : ${maps}" th:text="${u.value.userName}"></td>
+        <td th:each="u : ${maps}" th:text="${u.value.age}"></td>
+    </tr>
+</table>
+</body>
+</html>
