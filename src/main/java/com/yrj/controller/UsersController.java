@@ -26,7 +26,7 @@ public class UsersController {
     public String getUser(Integer id , Model model){
         User user =  userService.getUser(id);
         model.addAttribute("user",user);
-        return "shoWuser";
+        return "showUser";
     }
 
     @RequestMapping("/getUserAll")
